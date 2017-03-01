@@ -126,14 +126,14 @@ export const fetchPageRequest = (schema, pageGroup, pageParams, options = {}) =>
   }
 }
 
-export const fetchPageSuccess = (schema, pageGroup, pageParamsOrKey, records) => {
+export const fetchPageSuccess = (schema, pageGroup, pageParamsOrKey, records, pagination) => {
   const { key } = schema
   const pageKey = createPageKey(schema, pageParamsOrKey)
   const normalized = normalize(records, [schema])
   return {
     type: actionTypes.FETCH_RESOURCE_PAGE_SUCCESS,
     payload: normalized,
-    meta: { schema: key, pageGroup, pageKey },
+    meta: { schema: key, pageGroup, pageKey, pagination },
   }
 }
 
