@@ -1,5 +1,5 @@
 {
-  "name": "crudux",
+  "name": "@bodetree/crudux",
   "version": "1.0.0",
   "description": "A redux library for managing CRUD state.",
   "main": "lib/index.js",
@@ -12,7 +12,8 @@
     "build": "npm run build:lib",
     "build:lib": "babel src --out-dir lib",
     "test": "mocha --compilers js:babel-register --recursive --recursive \"src/**/__tests__/*\"",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "prepublish": "npm run clean && npm run build"
   },
   "author": "SpinGo - Matt Polichette",
   "license": "MIT",
